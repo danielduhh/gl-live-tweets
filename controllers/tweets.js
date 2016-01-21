@@ -59,8 +59,7 @@ tweets.emitTweetsByBbox = function (geo){
      **/
 
     var streamOptions = {
-        locations: [geo.southwest.lng, geo.southwest.lat, geo.northeast.lng, geo.northeast.lat].join(","),
-        track: "spatial, geospatial, spatialdev, @spatialdev"
+        locations: [geo.southwest.lng, geo.southwest.lat, geo.northeast.lng, geo.northeast.lat].join(",")
     };
 
     var tweetObj = {
