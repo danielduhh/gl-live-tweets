@@ -1,7 +1,7 @@
 # MapboxGL Live Tweets
 Use the place finder and fly to a location to view real time tweets in that area!
 
-### Technologies
+### Dependencies
 [Express](http://expressjs.com/) - web development framework for nodejs
     
 [Angular](https://angularjs.org/) - javacsript mvc framework
