@@ -1,5 +1,5 @@
 # MapboxGL Live Tweets
-Use the place finder search to fly anywhere around the world and see what people are tweets
+Use the place finder and fly to a location to view real time tweets in that area!
 
 ### Technologies
 [Express](http://expressjs.com/) - web development framework for nodejs

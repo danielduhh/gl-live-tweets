@@ -1,9 +1,9 @@
 {
-  "name": "mapboxgl",
+  "name": "gl-live-tweets",
   "version": "0.0.0",
-  "description": "Simple mapbox gl application.",
+  "description": "Real time tweets in MapboxGL
   "main": "server.js",
-  "author": "Baah",
+  "author": "Daniel Baah",
   "dependencies": {
     "express": "~4.7.2",
     "morgan": "~1.2.2",
