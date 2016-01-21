@@ -1,5 +1,5 @@
 var Twitter = require('twitter');
-var settings = require('../settings');
+//var settings = require('../settings');
 
 // pass in twitter api tokens
 var twitterAPI = new Twitter({
