@@ -1,1 +1,4 @@
-mapApp.constant('config', {"gl-accessToken":""});
+mapApp.constant('config', {
+    "gl-accessToken":"",
+    "openCage-key":""
+});
