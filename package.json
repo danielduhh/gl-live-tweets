@@ -1,7 +1,7 @@
 {
   "name": "gl-live-tweets",
   "version": "0.0.0",
-  "description": "Real time tweets in MapboxGL
+  "description": "Real time tweets in MapboxGL",
   "main": "server.js",
   "author": "Daniel Baah",
   "dependencies": {
