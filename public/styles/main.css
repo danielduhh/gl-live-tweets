@@ -1,0 +1,59 @@
+body { margin:0; padding:0; }
+#map {
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    width:100%;
+}
+
+.back2maggie{
+    position:absolute;
+    z-index: 1000;
+    left:10px;
+    top:30px;
+    /*background-color: #fff;*/
+    /*padding: 10px;*/
+    /*cursor: pointer;*/
+    /*font-family: "Helvetica Neue";*/
+}
+
+#tweets {
+    position:absolute;
+    z-index: 1000;
+    left:0;
+    top:0;
+    background-color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    font-family: "Helvetica Neue";
+}
+
+#timeline {
+    position:absolute;
+    z-index: 1000;
+    left:0;
+    top:0;
+    width:30%;
+    background-color: #fafafa;
+    font-family: "Helvetica Neue";
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+md-sidenav .tweet{
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+
+md-sidenav .tweet.active {
+    opacity: 1;
+}
+
+
+:focus {
+    outline: none;
+}
