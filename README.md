@@ -15,15 +15,17 @@ Use the place finder and fly to a location to view real time tweets in that area
 #### Installation
 Create a settings.js file with Twitter API creds in this directory, use the [settings-example.js](settings-example.js) as an example
 
-Create a config.js file with Mapbox & OpenCage Geocode access tokens in the public/scripts directory, use the [Config-example.js](public/scripts/Config-example.js) as an example
-
 Install app dependencies 
     
     npm install
     bower install
 
+Build app .min files & watch for changes
+        
+    grunt build
+    
 Start app
     
     npm start
-    
-View application at: http://localhost:8080
+        
+View application at: http://localhost:4000

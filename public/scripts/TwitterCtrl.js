@@ -30,6 +30,14 @@ mapApp.controller('TweetsCtrl', function($scope,$http,$templateCache, $rootScope
         );
     };
 
+    $scope.flyToTweet =  function (id){
+        var tweet = _.find(TwitterService.allTweets.features, function(v){ return v.properties.id == id; });
+
+        $scope.map.flyTo({center:tweet.geometry.coordinates});
+        $scope.selectedTweet = tweet.properties.id;
+
+    };
+
     // On every scroll event, check which element is on screen
     //window.onscroll = function() {
     //    var obj = Object.keys(TwitterService.getFlyToDict($scope.tweets));

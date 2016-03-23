@@ -1,7 +1,6 @@
 settings.js
 public/components
 npm-debug.log
-Config.js
 .idea
 node_modules
 .env

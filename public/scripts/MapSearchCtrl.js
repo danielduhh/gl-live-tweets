@@ -7,6 +7,7 @@ angular.module('mapApp').controller('mapSearch', function($scope,$http,$q,Twitte
     $scope.goToLocation = function(obj){
         $scope.map.flyTo({center:[obj.geometry.coordinates[0],obj.geometry.coordinates[1]], zoom:12});
         TwitterService.getTweetsForLocation(obj);
+        $scope.hideResults = true;
     };
 
     // update text search upon place selection
@@ -27,6 +28,7 @@ angular.module('mapApp').controller('mapSearch', function($scope,$http,$q,Twitte
         MapService.openCageGeocode($scope.searchQuery)
             .then(function(res){
                 $scope.openCageResults = res;
+                $scope.hideResults = false;
             });
     };
 

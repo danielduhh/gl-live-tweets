@@ -5,9 +5,10 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
 
-    <link rel="stylesheet" href="styles/zoom.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/search.css">
+    <!--<link rel="stylesheet" href="styles/zoom.css">-->
+    <!--<link rel="stylesheet" href="styles/main.css">-->
+    <!--<link rel="stylesheet" href="styles/search.css">-->
+    <link rel="stylesheet" href="dist/gl-live-tweets.min.css">
     <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="./components/angular-material/angular-material.min.css">
@@ -23,25 +24,20 @@
 <div ng-controller="mapSearch" id="mapSearch">
     <form ng-submit="getOpenCageSearchData()">
     <div class="searchbox">
-        <!--<md-input-container flex>-->
-            <!--<label>Search location</label>-->
-            <!--<input type="text" ng-model="searchQuery">-->
-        <!--</md-input-container>-->
-
         <md-input-container md-no-float class="md-block">
             <input ng-model="searchQuery" placeholder="Search location">
         </md-input-container>
 
         <div ng-show="searchQuery.length>0" class="suggestions">
 
-            <div ng-show="googleResults.results.length>0" ng-repeat="val in results.results | filter:searchQuery" class="single-result">
-                <div ng-click="goToLocation(val.geometry);changeSearchText(val.formatted_address)" class="text">
-                    {{val.formatted_address}}
-                </div>
-            </div>
+            <!--<div ng-show="googleResults.results.length>0" ng-repeat="val in results.results | filter:searchQuery" class="single-result">-->
+                <!--<div ng-click="goToLocation(val.geometry);changeSearchText(val.formatted_address)" class="text">-->
+                    <!--{{val.formatted_address}}-->
+                <!--</div>-->
+            <!--</div>-->
 
-            <div ng-show="openCageResults.features.length>0" ng-repeat="val in openCageResults.features | filter:searchQuery" class="single-result">
-                <div ng-click="goToLocation(val);changeSearchText(val.properties.formatted)" class="text">
+            <div ng-show="openCageResults.features.length>0 && !hideResults" ng-repeat="val in openCageResults.features | filter:searchQuery" class="single-result">
+                <div ng-click="goToLocation(val);changeSearchText(val.properties.formatted);" class="text">
                     {{val.properties.formatted}}
                 </div>
             </div>
@@ -58,18 +54,11 @@
 
 <div ng-controller="TweetsCtrl">
     <md-sidenav md-is-locked-open="true" md-component-id="left" class="md-sidenav-left">
-        <div class="tweet" ng-repeat="t in tweets.features" id="{{t.properties.id}}" ng-class="{active: $index == 0}">
+        <div class="tweet" ng-repeat="t in tweets.features" id="{{t.properties.id}}" ng-class="$index == 0 || selectedTweet == t.properties.id ? 'active' : ''"
+                ng-click="flyToTweet(t.properties.id)">
             {{t.properties.text}}
         </div>
     </md-sidenav>
-
-    <!--&lt;!&ndash;<div ng-show="tweets.features.length>0" ng-click="toggleTimeline()" id="tweets">Tweets</div>&ndash;&gt;-->
-    <!--<div id="timeline">-->
-        <!--&lt;!&ndash;<div class="tweet" ng-repeat="t in tweets.features | orderBy:'-properties.timestamp_ms'" id="{{t.properties.id}}">&ndash;&gt;-->
-        <!--<div class="tweet" ng-repeat="t in tweets.features" id="{{t.properties.id}}" ng-class="{active: $index == 0}">-->
-            <!--{{t.properties.text}}-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
 
 
@@ -89,12 +78,14 @@
 <script src="./components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="./components/turf/turf.min.js"></script>
 
-<script src="scripts/app.js"></script>
-<script src="scripts/Config.js"></script>
-<script src="scripts/MapSearchCtrl.js"></script>
-<script src="scripts/MapService.js"></script>
-<script src="scripts/TwitterCtrl.js"></script>
-<script src="scripts/SocketService.js"></script>
-<script src="scripts/TwitterService.js"></script>
+<script src="dist/gl-live-tweets.min.js"></script>
+
+<!--<script src="scripts/app.js"></script>-->
+<!--<script src="scripts/Config.js"></script>-->
+<!--<script src="scripts/MapSearchCtrl.js"></script>-->
+<!--<script src="scripts/MapService.js"></script>-->
+<!--<script src="scripts/TwitterCtrl.js"></script>-->
+<!--<script src="scripts/SocketService.js"></script>-->
+<!--<script src="scripts/TwitterService.js"></script>-->
 
 </html>

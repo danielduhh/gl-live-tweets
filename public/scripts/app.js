@@ -4,7 +4,7 @@ var mapApp = angular.module('mapApp',
 
         var data;
         var version = 0; // version of twitter response
-        var randomColor;
+        var randomColor; // random point color
 
         mapboxgl.accessToken = config["gl-accessToken"];
 
